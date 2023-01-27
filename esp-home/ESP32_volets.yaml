@@ -1,0 +1,211 @@
+
+# Variables
+substitutions:
+  name: esp-volets
+
+# Name
+esphome:
+  name: ${name}
+
+# Board model
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# W-Fi configuration
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  reboot_timeout: 15min
+ 
+# Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${name} Fallback Hotspot"
+    password: !secret hotspot_password
+
+captive_portal:
+
+# Enable logging
+logger:
+  baud_rate: 0
+  level: INFO
+#  level: DEBUG
+  
+# Enable Home Assistant API
+api:
+  
+ota:
+  
+web_server:
+  port: 80
+  
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+    
+# Add switchs
+switch:
+  # Restart button
+  - platform: restart
+    name: "${name} reboot"
+
+### 1st radiocommande
+
+  # Push on button Up
+  - platform: gpio
+    name: "Haut"
+    pin: 25
+    id: volets_1er_button_up
+    interlock: [volets_1er_button_down, volets_1er_button_stop]
+    on_turn_on:
+    - delay: 500ms
+    - switch.turn_off: volets_1er_button_up
+
+  # Push on button Stop
+  - platform: gpio
+    name: "Stop"
+    pin: 26
+    id: volets_1er_button_stop
+    interlock: [volets_1er_button_down, volets_1er_button_up]
+    on_turn_on:
+    - delay: 500ms
+    - switch.turn_off: volets_1er_button_stop
+
+  # Push on button Down
+  - platform: gpio
+    name: "Bas"
+    pin: 27
+    id: volets_1er_button_down
+    interlock: [volets_1er_button_up, volets_1er_button_stop]
+    on_turn_on:
+    - delay: 500ms
+    - switch.turn_off: volets_1er_button_down
+
+
+### 2nd radiocommande
+
+  # Push on button Up
+  - platform: gpio
+    name: "Haut"
+    pin: 33
+    id: volets_rdc_button_up
+    interlock: [volets_rdc_button_down, volets_rdc_button_stop]
+    on_turn_on:
+    - delay: 500ms
+    - switch.turn_off: volets_rdc_button_up
+
+  # Push on button Stop
+  - platform: gpio
+    name: "Stop"
+    pin: 34
+    id: volets_rdc_button_stop
+    interlock: [volets_rdc_button_down, volets_rdc_button_up]
+    on_turn_on:
+    - delay: 500ms
+    - switch.turn_off: volets_rdc_button_stop
+
+  # Push on button Down
+  - platform: gpio
+    name: "Bas"
+    pin: 35
+    id: volets_rdc_button_down
+    interlock: [volets_rdc_button_up, volets_rdc_button_stop]
+    on_turn_on:
+    - delay: 500ms
+    - switch.turn_off: volets_rdc_button_down
+
+
+cover:
+### 1st radiocommande
+  - platform: time_based
+    id: volets_1er
+    name: "Volets du premier"
+    assumed_state: True
+    open_action:
+      - switch.turn_on: volets_1er_button_up
+    open_duration: 21s
+    close_action:
+      - switch.turn_on: volets_1er_button_down
+    close_duration: 21s
+    stop_action:
+      - switch.turn_on: volets_1er_button_stop
+
+### 2nd radiocommande
+  - platform: time_based
+    id: volets_rdc
+    name: "Volets du rez-de-chaussée"
+    assumed_state: True
+    open_action:
+      - switch.turn_on: volets_rdc_button_up
+    open_duration: 21s
+    close_action:
+      - switch.turn_on: volets_rdc_button_down
+    close_duration: 21s
+    stop_action:
+      - switch.turn_on: volets_rdc_button_stop
+    
+    
+# Add sensors
+
+sensor:
+  # Wi-Fi signal
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    update_interval: 60s
+    unit_of_measurement: dB
+    accuracy_decimals: 0
+    force_update: false
+    icon: mdi:wifi
+
+  # Uptime
+  - platform: uptime
+    id: uptime_seconds
+    name: "Uptime Sensor"
+    update_interval: 60s
+    unit_of_measurement: s
+    accuracy_decimals: 0
+    force_update: false
+    icon: mdi:timer
+ 
+
+binary_sensor:
+# ESP Status
+  - platform: status
+    name: "ESP Volets (Statut)" 
+
+text_sensor:
+  # Uptime human readable
+  - platform: template
+    name: ${name} - Uptime
+    update_interval: 60s
+    icon: mdi:clock-start
+    lambda: |-
+      int seconds = (id(uptime_seconds).state);
+      int days = seconds / (24 * 3600);
+      seconds = seconds % (24 * 3600);
+      int hours = seconds / 3600;
+      seconds = seconds % 3600;
+      int minutes = seconds /  60;
+      seconds = seconds % 60;
+      if ( days ) {
+        return { (String(days) +"d " + String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
+      } else if ( hours ) {
+        return { (String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
+      } else if ( minutes ) {
+        return { (String(minutes) +"m "+ String(seconds) +"s").c_str() };
+      } else {
+        return { (String(seconds) +"s").c_str() };
+      }
+  # Expose ESPHome version as sensor.
+  - platform: version
+    name: ${name} - Version
+  # Expose WiFi information as sensors.
+  - platform: wifi_info
+    ip_address:
+      name: ${name} - IP
+    bssid:
+      name: ${name} - BSSID
+      
+################################################################################################      
+         
