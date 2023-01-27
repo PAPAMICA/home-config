@@ -1,0 +1,202 @@
+
+# Variables
+substitutions:
+  name: gazpar
+
+# Name
+esphome:
+  name: ${name}
+
+# Board model
+esp8266:
+  board: esp01_1m
+
+# W-Fi configuration
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  reboot_timeout: 15min
+ 
+# Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${name} Fallback Hotspot"
+    password: !secret hotspot_password
+
+captive_portal:
+
+# Enable logging
+logger:
+  baud_rate: 0
+  level: INFO
+#  level: DEBUG
+  
+# Enable Home Assistant API
+api:
+  
+ota:
+  
+web_server:
+  port: 80
+  
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+    
+# Reset sensors at 00h
+    on_time:
+      - seconds: 57
+        minutes: 59
+        hours: 23
+        then:  
+             
+          - sensor.template.publish:
+              id: gazpar_gaz_veille
+              state: !lambda return id(gazpar_gaz_jour).state; 
+
+          - pulse_meter.set_total_pulses:
+              id: gazpar
+              value: 0  
+              
+          - sensor.template.publish:
+              id: gazpar_puissance_gaz_veille
+              state: !lambda return id(gazpar_puissance_gaz_jour).state;              
+
+          - lambda: |-
+              id(gazpar_puissance_gaz_jour) = 0;
+    
+    
+# Add sensors
+
+sensor:
+  # Wi-Fi signal
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    update_interval: 60s
+    unit_of_measurement: dB
+    accuracy_decimals: 0
+    force_update: false
+    icon: mdi:wifi
+
+  # Uptime
+  - platform: uptime
+    id: uptime_seconds
+    name: "Uptime Sensor"
+    update_interval: 60s
+    unit_of_measurement: s
+    accuracy_decimals: 0
+    force_update: false
+    icon: mdi:timer
+ 
+
+
+###########    GAZ    ###############################################################################
+# Gaz usage
+  - platform: pulse_meter
+    id: gazpar
+    pin:
+      number: GPIO0
+    unit_of_measurement: "l/mn"
+    icon: mdi:gas
+    internal_filter: 100ms
+    name: "Debit Gazpar TIC"
+    state_class: measurement
+    filters:
+      - lambda: return (x * 10); # 1 impulsion = 10 l
+      
+#########################
+# Total gaz usage today
+    total:
+      unit_of_measurement: "m³"
+      name: 'Gazpar Gaz Jour'
+      filters:
+        - multiply: 0.01 # (pour avoir des m3)
+      accuracy_decimals: 3
+      icon: mdi:fire
+      id: gazpar_gaz_jour
+      device_class: "gas"
+      
+#########################
+# Total gaz usage yesterday
+  - platform: template
+    name: "Gazpar Gaz Veille"
+    state_class: measurement
+    device_class: "gas"
+    id: gazpar_gaz_veille
+    unit_of_measurement: "m³"
+    accuracy_decimals: 3
+    icon: mdi:fire
+    update_interval: 10s 
+      
+######################### 
+# Total gaz power today
+  - platform: template
+    name: "Gazpar Puissance Gaz Jour"
+    lambda: |-
+      return id(gazpar_gaz_jour).state * 10.01;
+    device_class: energy
+    unit_of_measurement: "kWh"
+    accuracy_decimals: 3 
+    id: gazpar_puissance_gaz_jour
+    state_class: total_increasing
+    
+######################### 
+# Total gaz power today
+  - platform: template
+    name: "Gazpar Puissance Gaz Veille"
+    state_class: total_increasing
+    device_class: energy
+    id: gazpar_puissance_gaz_veille
+    unit_of_measurement: "kWh"
+    accuracy_decimals: 3
+    icon: mdi:fire
+    update_interval: 10s    
+    
+###########    GAZ    ###############################################################################
+
+
+    
+binary_sensor:
+# ESP Status
+  - platform: status
+    name: "Gaz (Statut)" 
+      
+switch:
+  # Restart button
+  - platform: restart
+    name: "${name} reboot"
+
+text_sensor:
+  # Uptime human readable
+  - platform: template
+    name: ${name} - Uptime
+    update_interval: 60s
+    icon: mdi:clock-start
+    lambda: |-
+      int seconds = (id(uptime_seconds).state);
+      int days = seconds / (24 * 3600);
+      seconds = seconds % (24 * 3600);
+      int hours = seconds / 3600;
+      seconds = seconds % 3600;
+      int minutes = seconds /  60;
+      seconds = seconds % 60;
+      if ( days ) {
+        return { (String(days) +"d " + String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
+      } else if ( hours ) {
+        return { (String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
+      } else if ( minutes ) {
+        return { (String(minutes) +"m "+ String(seconds) +"s").c_str() };
+      } else {
+        return { (String(seconds) +"s").c_str() };
+      }
+  # Expose ESPHome version as sensor.
+  - platform: version
+    name: ${name} - Version
+  # Expose WiFi information as sensors.
+  - platform: wifi_info
+    ip_address:
+      name: ${name} - IP
+    bssid:
+      name: ${name} - BSSID
+      
+################################################################################################      
+         
