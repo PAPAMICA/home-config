@@ -1,0 +1,287 @@
+binary_sensor:
+
+### SENSORS FOR CYCLES NOTIFICATIONS
+# Lave Linge
+  - state: "{{ states('sensor.prise_lave_linge_power') | float(default = 0) > 4 }}"
+    name: Lave Linge - Cycle en cours
+    unique_id: is_lave_linge_running
+    device_class: running
+    delay_off: "0:02:00"
+
+# Sèche Linge
+  - state: "{{ states('sensor.prise_seche_linge_power') | float(default = 0) > 4 }}"
+    name: Seche Linge - Cycle en cours
+    unique_id: is_seche_linge_running
+    device_class: running
+    delay_off: "0:02:00"
+
+# Lave Vaisselle
+  - state: "{{ states('sensor.prise_lave_vaisselles_power') | float(default = 0) > 2 }}"
+    name: Lave Vaisselle - Cycle en cours
+    unique_id: is_lave_vaisselle_running
+    device_class: running
+    delay_off: "0:02:00"
+
+sensor:
+
+### SENSORS FOR ELECTRICAL MONITORING
+# Total of identified power
+  - name: identified_power
+    unique_id: identified_power
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    state: >-
+      {{ 
+        states('sensor.prise_baie_informatique_power')|float(0)|round
+        + states('sensor.prise_setup_pc_power')|float(0)|round
+        + states('sensor.prise_setup_tv_salon_power')|float(0)|round
+        + states('sensor.prise_lave_vaisselles_power')|float(0)|round
+        + states('sensor.prise_seche_linge_power')|float(0)|round
+        + states('sensor.prise_lave_linge_power')|float(0)|round
+        + states('sensor.prise_velos_power')|float(0)|round
+        + states('sensor.prise_atelier_power')|float(0)|round
+        + states('sensor.prise_setup_tv_chambre_power')|float(0)|round
+        + states('sensor.prise_four_power')|float(0)|round
+        + states('sensor.prise_cuisine_power')|float(0)|round
+        + states('sensor.prise_porte_garage_power')|float(0)|round
+        + states('sensor.prise_baie_reseau_power')|float(0)|round
+        + states('sensor.salon_prise_setup_canape_power')|float(0)|round
+        + states('sensor.prise_chaudiere_power')|float(0)|round
+        + states('sensor.prise_adoucisseur_power')|float(0)|round
+        + states('sensor.prise_setup_tv_bureau_power')|float(0)|round
+        + states('sensor.prise_setup_entree_power')|float(0)|round
+        + states('sensor.prise_setup_tv_salon_2_power')|float(0)|round
+        + states('sensor.prise_setup_lit_mica_power')|float(0)|round
+        + states('sensor.prise_setup_lit_celia_power')|float(0)|round
+        + states('sensor.1er_etage_volets_7_1min')|float(0)|round
+        + states('sensor.1re_etage_eclairage_9_1min')|float(0)|round
+        + states('sensor.chambre_enfant_prises_13_1min')|float(0)|round
+        + states('sensor.chambre_parents_eclairage_14_1min')|float(0)|round
+        + states('sensor.climatisation_10_1min')|float(0)|round
+        + states('sensor.cuisine_frigo_16_1min')|float(0)|round
+        + states('sensor.cuisine_plaque_electrique_1_1min')|float(0)|round
+        + states('sensor.garage_eclairage_vmc_8_1min')|float(0)|round
+        + states('sensor.technique_prise_compteur_3_1min')|float(0)|round
+        + states('sensor.reste_rdc_prises_5_1min')|float(0)|round
+        + states('sensor.reste_cuisine_prises_4_1min')|float(0)|round
+        + states('sensor.reste_chambre_parent_prises_6_1min')|float(0)|round
+        + states('sensor.reste_1er_etage_prises_12_1min')|float(0)|round
+      }}
+
+# Rest of consumption of sensors
+  - name: reste_rdc_prises_5_1min
+    unique_id: reste_rdc_prises_5_1min
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    state: >-
+      {{ 
+        states('sensor.rdc_prises_5_1min')|float(0)|round
+        - states('sensor.prise_setup_pc_power')|float(0)|round
+        - states('sensor.prise_setup_tv_bureau_power')|float(0)|round
+      }}
+      
+  - name: reste_cuisine_prises_4_1min
+    unique_id: reste_cuisine_prises_4_1min
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    state: >-
+      {{ 
+        states('sensor.cuisine_prises_4_1min')|float(0)|round
+        - states('sensor.prise_cuisine_power')|float(0)|round
+      }}
+      
+  - name: reste_chambre_parent_prises_6_1min
+    unique_id: reste_chambre_parent_prises_6_1min
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    state: >-
+      {{ 
+        states('sensor.chambre_parent_prises_6_1min')|float(0)|round
+        - states('sensor.prise_setup_lit_mica_power')|float(0)|round
+        - states('sensor.prise_setup_tv_chambre_power')|float(0)|round
+        - states('sensor.prise_setup_lit_celia_power')|float(0)|round
+      }}
+      
+  - name: reste_1er_etage_prises_12_1min
+    unique_id: reste_1er_etage_prises_12_1min
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    state: >-
+      {{ 
+        states('sensor.1er_etage_prises_12_1min')|float(0)|round
+        - states('sensor.prise_setup_tv_salon_power')|float(0)|round
+        - states('sensor.prise_setup_entree_power')|float(0)|round
+        - states('sensor.prise_setup_tv_salon_2_power')|float(0)|round
+      }}
+    
+# Conversion of sensors to Wh
+  - name : reste_1er_etage_prises_12_1min_wh
+    unique_id: reste_1er_etage_prises_12_1min_wh
+    unit_of_measurement: Wh
+    device_class: energy
+    state_class: total_increasing
+    state: "{{ states('sensor.sensor.reste_1er_etage_prises_12_1min')|float(0) /60 }}"
+    
+  - name : reste_chambre_parent_prises_6_1min_wh
+    unique_id: reste_chambre_parent_prises_6_1min_wh
+    unit_of_measurement: Wh
+    device_class: energy
+    state_class: total_increasing
+    state: "{{ states('sensor.sensor.reste_chambre_parent_prises_6_1min')|float(0) /60 }}"
+    
+  - name : reste_cuisine_prises_4_1min_wh
+    unique_id: reste_cuisine_prises_4_1min_wh
+    unit_of_measurement: Wh
+    device_class: energy
+    state_class: total_increasing
+    state: "{{ states('sensor.sensor.reste_cuisine_prises_4_1min')|float(0) /60 }}"
+    
+  - name : reste_rdc_prises_5_1min_wh
+    unique_id: reste_rdc_prises_5_1min_wh
+    unit_of_measurement: Wh
+    device_class: energy
+    state_class: total_increasing
+    state: "{{ states('sensor.sensor.reste_rdc_prises_5_1min')|float(0) /60 }}"
+    
+# Unidentified power
+  - name: unmetered_power
+    unique_id: unmetered_power
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    state: >-
+      {{ 
+        states('sensor.compteur_electrique_123_1min')|float(0)|round
+        - states('sensor.identified_power')|float(0)|round
+      }}
+
+# Total power
+  - name: total_power
+    unique_id: total_power
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    state: >-
+      {{ 
+        states('sensor.unmetered_power')|float(0)|round
+        + states('sensor.identified_power')|float(0)|round
+      }}
+
+### SENSORS ROUNDED
+  - name: eau_compteur_cout_rounded
+    unique_id: eau_compteur_cout_rounded
+    device_class: monetary
+    state_class: total_increasing
+    unit_of_measurement: EUR
+    state: "{{ (states('sensor.compteur_eau_jour_cost') | float | round(2) )}}"
+
+  - name: electricite_compteur_cout_rounded
+    unique_id: electricite_compteur_cout_rounded
+    device_class: monetary
+    state_class: total_increasing
+    unit_of_measurement: EUR
+    state: "{{ (states('sensor.compteur_electricite_cost_jour') | float | round(2) )}}"
+
+  - name: gaz_compteur_cout_rounded
+    unique_id: gaz_compteur_cout_rounded
+    device_class: monetary
+    state_class: total_increasing
+    unit_of_measurement: EUR
+    state: "{{ (states('sensor.jour_gaz_cost') | float | round(2) )}}"
+
+### CONFIG OF GAZ METER
+  - name: "Compteur de gaz (consommation)"
+    unique_id: "gaz_compteur_consommation"
+    unit_of_measurement: "m³"
+    device_class: gas
+    state_class: total
+    state: "{{states('input_number.releve_de_gaz')}}"
+
+  - name: "Compteur de gaz (puissance)"
+    unique_id: "gaz_compteur_puissance"
+    unit_of_measurement: kWh
+    device_class: energy
+    state_class: total_increasing
+    state: "{{ (states('input_number.releve_de_gaz') | float) * 11.27}}"
+
+### SENSORS FOR SPEEDTEST ORANGE
+  - name: 'SpeedTest CLI Ping'
+    unique_id: speedtest_cli_ping
+    icon: mdi:speedometer
+    unit_of_measurement: ms
+    state_class: measurement
+    state: "{{ (states('sensor.speedtest_cli_data') | from_json).ping | round(2) }}"
+    
+  - name: 'SpeedTest CLI Download'
+    unique_id: speedtest_cli_download
+    icon: mdi:speedometer
+    unit_of_measurement: Mbit/s
+    state_class: measurement
+    state: "{{ ((states('sensor.speedtest_cli_data') | from_json).download * 8 / 1000 / 1000) | round(2) }}"
+    
+  - name: 'SpeedTest CLI Upload'
+    unique_id: speedtest_cli_upload
+    icon: mdi:speedometer
+    unit_of_measurement: Mbit/s
+    state_class: measurement
+    state: "{{ ((states('sensor.speedtest_cli_data') | from_json).upload * 8 / 1000 / 1000) | round(2) }}"
+    
+  - name: 'SpeedTest CLI FAI'
+    unique_id: speedtest_cli_fai
+    icon: mdi:speedometer
+    state: "{{ ((states('sensor.speedtest_cli_data') | from_json).isp)}}"
+    
+  - name: 'SpeedTest CLI IP Externe'
+    unique_id: speedtest_cli_ip_externe
+    icon: mdi:speedometer
+    state: "{{ ((states('sensor.speedtest_cli_data') | from_json).externalip)}}"
+    
+  - name: 'SpeedTest CLI URL'
+    unique_id: speedtest_cli_url
+    icon: mdi:speedometer
+    state: "{{ ((states('sensor.speedtest_cli_data') | from_json).url)}}"
+
+### SENSORS FOR SPEEDTEST STARLINK
+  - name: 'SpeedTest CLI Ping 2'
+    unique_id: speedtest_cli_ping_2
+    icon: mdi:speedometer
+    unit_of_measurement: ms
+    state_class: measurement
+    state: "{{ (states('sensor.speedtest_cli_data_2') | from_json).ping | round(2) }}"
+    
+  - name: 'SpeedTest CLI Download 2'
+    unique_id: speedtest_cli_download_2
+    icon: mdi:speedometer
+    unit_of_measurement: Mbit/s
+    state_class: measurement
+    state: "{{ ((states('sensor.speedtest_cli_data_2') | from_json).download * 8 / 1000 / 1000) | round(2) }}"
+    
+  - name: 'SpeedTest CLI Upload 2'
+    unique_id: speedtest_cli_upload_2
+    icon: mdi:speedometer
+    unit_of_measurement: Mbit/s
+    state_class: measurement
+    state: "{{ ((states('sensor.speedtest_cli_data_2') | from_json).upload * 8 / 1000 / 1000) | round(2) }}"
+    
+  - name: 'SpeedTest CLI FAI 2'
+    unique_id: speedtest_cli_fai_2
+    icon: mdi:speedometer
+    state: "{{ ((states('sensor.speedtest_cli_data_2') | from_json).isp)}}"
+    
+  - name: 'SpeedTest CLI IP Externe 2'
+    unique_id: speedtest_cli_ip_externe_2
+    icon: mdi:speedometer
+    state: "{{ ((states('sensor.speedtest_cli_data_2') | from_json).externalip)}}"
+    
+  - name: 'SpeedTest CLI URL 2'
+    unique_id: speedtest_cli_url_2
+    icon: mdi:speedometer
+    state: "{{ ((states('sensor.speedtest_cli_data_2') | from_json).url)}}"
+  
+
+

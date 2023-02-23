@@ -1,0 +1,106 @@
+# Config file for Home Assistant by Mickael "PAPAMICA" Asseline
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# API activation
+api:
+
+# Text to speech
+tts:
+  - platform: google_translate
+  
+# Use proxy to external access
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.10.0.1
+    
+# Include files
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+frontend:
+  themes: !include_dir_merge_named themes
+sensor: !include sensors.yaml
+template: !include templates.yaml
+
+# Mail notifications
+notify:
+  - name: "notification_mail"
+    platform: smtp
+    sender: !secret mail_sender
+    recipient: !secret mail_recipient
+    server: "mail.infomaniak.com"
+    username: !secret mail_sender
+    password: !secret mail_password
+    sender_name: "Home Assistant"
+    
+# Add calendar    
+calendar:
+  - platform: caldav
+    username: !secret cal_username
+    password: !secret cal_password
+    url: https://sync.infomaniak.com
+
+# Add config editor    
+config_editor:
+
+# Saving data to influxdb
+influxdb:
+  host: localhost
+  port: 8086
+  database: homeassistant
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  max_retries: 3
+  measurement_attr: entity_id
+
+# £Configuration for mailbox
+input_boolean:
+  courrier_present:
+    name: courrier
+    icon: mdi:mailbox
+
+# Configuration for day consuption
+utility_meter:
+  electricite_consommation_jour:
+    source: sensor.lixee_base
+    name: electricite_consommation_jour
+    cycle: daily
+
+# New item for my garage door with status
+cover:
+  - platform: template
+    covers:
+      porte_garage_v2:
+        device_class: garage
+        friendly_name: "Porte du garage v2"
+        unique_id: porte_garage_v2
+        position_template: "{{ states('sensor.status_porte_garage') | float }}"
+        open_cover:
+          - condition: state
+            entity_id: binary_sensor.garage_capteur_porte_garage_contact
+            state: "off"
+          - device_id: 929db44d4c7565b88ba9847ed2b01881
+            domain: cover
+            entity_id: cover.garage_porte
+            type: open
+        close_cover:
+          - condition: state
+            entity_id: binary_sensor.garage_capteur_porte_garage_contact
+            state: "on"
+          - device_id: 929db44d4c7565b88ba9847ed2b01881
+            domain: cover
+            entity_id: cover.garage_porte
+            type: close
+        stop_cover:
+          - device_id: 929db44d4c7565b88ba9847ed2b01881
+            domain: cover
+            entity_id: cover.garage_porte
+            type: stop
+        icon_template: >-
+          {% if states('binary_sensor.garage_capteur_porte_garage_contact') == "on" %}
+            mdi:garage-open
+          {% else %}
+            mdi:garage
+          {% endif %}

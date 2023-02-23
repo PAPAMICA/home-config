@@ -1,0 +1,746 @@
+- id: '1672649934117'
+  alias: ' [GARAGE] Bouton -  Fermeture porte'
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 69da99fb40341e5f59737dc4554a193b
+    type: action
+    subtype: down-press
+    discovery_id: 0x00178801021b5e65 action_down-press
+  condition: []
+  action:
+  - device_id: 929db44d4c7565b88ba9847ed2b01881
+    domain: cover
+    entity_id: cover.garage_porte
+    type: close
+  mode: single
+- id: '1672650207766'
+  alias: ' [GARAGE] Bouton - Départ garage'
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 59f68271827b460e3753e7d87f40df07
+    type: click
+    subtype: single
+    discovery_id: 0x00158d000548d8b1 click_single
+  condition: []
+  action:
+  - device_id: 929db44d4c7565b88ba9847ed2b01881
+    domain: cover
+    entity_id: cover.garage_porte
+    type: open
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - device_id: 929db44d4c7565b88ba9847ed2b01881
+    domain: cover
+    entity_id: cover.garage_porte
+    type: close
+  - type: turn_off
+    device_id: ccd675d39774d82b372128baa6b7af7d
+    entity_id: switch.sonoff_10004a8dea
+    domain: switch
+  mode: single
+- id: '1672661661686'
+  alias: ' [GARAGE] Bouton - Eteindre et fermer'
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 69da99fb40341e5f59737dc4554a193b
+    type: action
+    subtype: off-press
+    discovery_id: 0x00178801021b5e65 action_off-press
+  condition:
+  - type: is_open
+    condition: device
+    device_id: 4803cc750003810d61904a9e83a8c020
+    entity_id: binary_sensor.garage_capteur_porte_garage_contact
+    domain: binary_sensor
+  action:
+  - device_id: 929db44d4c7565b88ba9847ed2b01881
+    domain: cover
+    entity_id: cover.garage_porte
+    type: close
+  - wait_for_trigger:
+    - type: not_opened
+      platform: device
+      device_id: 4803cc750003810d61904a9e83a8c020
+      entity_id: binary_sensor.garage_capteur_porte_garage_contact
+      domain: binary_sensor
+    continue_on_timeout: true
+  - type: turn_off
+    device_id: ccd675d39774d82b372128baa6b7af7d
+    entity_id: switch.sonoff_10004a8dea
+    domain: switch
+  mode: single
+- id: '1672661769685'
+  alias: ' [GARAGE] Bouton - Lumières'
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 69da99fb40341e5f59737dc4554a193b
+    type: action
+    subtype: on-press
+    discovery_id: 0x00178801021b5e65 action_on-press
+  condition: []
+  action:
+  - type: turn_on
+    device_id: ccd675d39774d82b372128baa6b7af7d
+    entity_id: switch.sonoff_10004a8dea
+    domain: switch
+  mode: single
+- id: '1672900176286'
+  alias: ' [GARAGE] Bouton - Ouverture porte'
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 69da99fb40341e5f59737dc4554a193b
+    type: action
+    subtype: up-press
+    discovery_id: 0x00178801021b5e65 action_up-press
+  condition: []
+  action:
+  - device_id: 929db44d4c7565b88ba9847ed2b01881
+    domain: cover
+    entity_id: cover.garage_porte
+    type: open
+  mode: single
+- id: '1672901807063'
+  alias: ' [GARAGE] Bouton - Eteindre les lumières'
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 69da99fb40341e5f59737dc4554a193b
+    type: action
+    subtype: off-press
+    discovery_id: 0x00178801021b5e65 action_off-press
+  - type: no_motion
+    platform: device
+    device_id: 1cf0d9a5a0b945b45354d605c968bb4b
+    entity_id: binary_sensor.garage_detecteur_de_mouvement_occupancy
+    domain: binary_sensor
+  condition:
+  - type: is_not_open
+    condition: device
+    device_id: 4803cc750003810d61904a9e83a8c020
+    entity_id: binary_sensor.garage_capteur_porte_garage_contact
+    domain: binary_sensor
+  action:
+  - type: turn_off
+    device_id: ccd675d39774d82b372128baa6b7af7d
+    entity_id: switch.sonoff_10004a8dea
+    domain: switch
+  mode: single
+- id: '1672940175702'
+  alias: ' [GARAGE] Capteur - Allume la lumière à l''ouverture'
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 1cf0d9a5a0b945b45354d605c968bb4b
+    entity_id: binary_sensor.garage_detecteur_de_mouvement_occupancy
+    domain: binary_sensor
+  condition:
+  - condition: device
+    type: is_off
+    device_id: ccd675d39774d82b372128baa6b7af7d
+    entity_id: switch.sonoff_10004a8dea
+    domain: switch
+  - condition: device
+    type: is_off
+    device_id: 7d4e4254eafdfc95a5181eb9135197f4
+    entity_id: switch.prise_atelier_outlet
+    domain: switch
+    enabled: true
+  action:
+  - type: turn_on
+    device_id: ccd675d39774d82b372128baa6b7af7d
+    entity_id: switch.sonoff_10004a8dea
+    domain: switch
+  - wait_for_trigger:
+    - type: no_motion
+      platform: device
+      device_id: 1cf0d9a5a0b945b45354d605c968bb4b
+      entity_id: binary_sensor.garage_detecteur_de_mouvement_occupancy
+      domain: binary_sensor
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 30
+  - type: turn_off
+    device_id: ccd675d39774d82b372128baa6b7af7d
+    entity_id: light.garage_lumiere_plafond
+    domain: light
+  mode: single
+- id: '1673723928999'
+  alias: '[NOTIFICATION] Lave Linge'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.lavage_en_cours
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      message: ⚡️ Le cycle est terminé !
+      title: Lave linge
+  - service: notify.mobile_app_iphone_celia
+    data:
+      message: ⚡️ Le cycle est terminé !
+      title: Lave linge
+  mode: single
+- id: '1673724135233'
+  alias: '[NOTIFICATION] Lave vaisselle'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.lave_vaisselle_cycle_en_cours
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      message: ⚡️ Le cycle est terminé !
+      title: Lave vaisselle
+  - service: notify.mobile_app_iphone_celia
+    data:
+      message: ⚡️ Le cycle est terminé !
+      title: Lave vaisselle
+  mode: single
+- id: '1673724184171'
+  alias: '[NOTIFICATION] Sèche linge'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.seche_linge_cycle_en_cours
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      message: ⚡️ Le cycle est terminé !
+      title: Sèche linge
+  - service: notify.mobile_app_iphone_celia
+    data:
+      message: ⚡️ Le cycle est terminé !
+      title: Sèche linge
+  mode: single
+- id: '1674565413351'
+  alias: '[NOTIFICATION] Boîte aux lettres - Facteur'
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 4be397a6a6af64605aca5d0da4af4969
+    entity_id: binary_sensor.boite_aux_lettre_capteur_de_mouvement_motion
+    domain: binary_sensor
+  condition:
+  - type: is_not_open
+    condition: device
+    device_id: d50c88103d366fff387cd4b459c72494
+    entity_id: binary_sensor.boite_aux_lettres_detecteur_ouverture_contact
+    domain: binary_sensor
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      title: "\U0001F4EC Boîte aux lettres"
+      message: Le facteur est passé !
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.courrier_present
+  - service: notify.mobile_app_iphone_celia
+    data:
+      message: Le facteur est passé !
+      title: "\U0001F4EC Boîte aux lettres"
+  mode: single
+- id: '1674739126763'
+  alias: '[NOTIFICATION] Batterie GazPar'
+  description: ''
+  trigger:
+  - type: battery_level
+    platform: device
+    device_id: 3c7e3b79b34afeb15a726817b10edeef
+    entity_id: sensor.compteur_gazpar_v2_battery
+    domain: sensor
+    below: 25
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  - platform: state
+    entity_id:
+    - sensor.compteur_gazpar_v2_status
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  - platform: state
+    entity_id:
+    - sensor.compteur_gazpar_v2_status
+    to: unknown
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      title: "\U0001FAAB Compteur GazPar"
+      message: Il faut changer la pile !
+  mode: single
+- id: '1675156461861'
+  alias: '[NOTIFICATION] Boîte aux lettres - Récupération'
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: d50c88103d366fff387cd4b459c72494
+    entity_id: binary_sensor.boite_aux_lettres_detecteur_ouverture_contact
+    domain: binary_sensor
+  condition:
+  - condition: state
+    entity_id: input_boolean.courrier_present
+    state: 'on'
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      title: "\U0001F4ED Boîte aux lettres"
+      message: Le courrier a été récupéré !
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.courrier_present
+  - service: notify.mobile_app_iphone_celia
+    data:
+      message: Le courrier a été récupéré !
+      title: "\U0001F4ED Boîte aux lettres"
+  mode: single
+- id: '1675369803847'
+  alias: '[NOTIFICATION] Consommation quotidienne'
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:50:00'
+  condition: []
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      title: "\U0001F4B8 Consommation de {% set jours = [\"Lundi\", \"Mardi\",\"Mercredi\",\"Jeudi\",\"Vendredi\",\"Samedi\",\"Dimanche\"]
+        %}{{ jours[now().weekday()] }}"
+      message: "⚡️ Électricité : {{((states(\"sensor.compteur_electricite_cost_jour\")|float))|round(2)}}€
+        ({{states(\"sensor.compteur_electricite_jour\")}} kWh)\n\U0001F525 Gaz : {{(states(\"sensor.jour_gaz_cost\")|float)|round(2)}}€
+        ({{states(\"sensor.jour_gaz_puissance\")|round}} kWh)\n\U0001F4A7 Eau : {{((states(\"sensor.compteur_eau_jour_cost\")|float))|round(2)}}€
+        ({{states(\"sensor.technique_esp32_eau_consommation_jour\")}} L)\n\U0001F4B0
+        Total : {{((states(\"sensor.compteur_electricite_cost_jour\")|float) + (states(\"sensor.jour_gaz_cost\")|float)
+        + (states(\"sensor.eau_m3_jour_cost\")|float))|round(2)}} €\n"
+  mode: single
+- id: '1675379258443'
+  alias: '[GAZPAR] Incrémentation du compteur'
+  description: ''
+  trigger:
+  - device_id: 3c7e3b79b34afeb15a726817b10edeef
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 1
+    unique_id: 18faa64f-23ab-40c1-878b-837b667f37f5
+  condition: []
+  action:
+  - service: input_number.increment
+    data: {}
+    target:
+      entity_id: input_number.releve_de_gaz
+  mode: single
+- id: '1675429904753'
+  alias: '[ENTREE] Lumières entrée'
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 6d09e643d438e2581d888ca228f2d961
+    entity_id: binary_sensor.porte_entree_detecteur_douverture
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 80893b20eefbfe6df20f18331897659f
+    entity_id: light.entree_1
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: cbd7598c67bc3b4ce3923f336be598c5
+    entity_id: light.entree_2_2
+    domain: light
+    brightness_pct: 100
+  - wait_for_trigger:
+    - platform: state
+      entity_id:
+      - lock.maison_st_julien
+      from: unlocked
+      to: locked
+    timeout:
+      hours: 0
+      minutes: 0
+      seconds: 25
+      milliseconds: 0
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 45
+      milliseconds: 0
+  - type: turn_off
+    device_id: 80893b20eefbfe6df20f18331897659f
+    entity_id: light.entree_1
+    domain: light
+  - type: turn_off
+    device_id: cbd7598c67bc3b4ce3923f336be598c5
+    entity_id: light.entree_2_2
+    domain: light
+  mode: single
+- id: '1675430210313'
+  alias: '[NOTIFICATION] Serrure ouverte ou bloquée'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - lock.entree_serrure
+    to: jammed
+  - platform: state
+    entity_id:
+    - lock.entree_serrure
+    from: locked
+    to: unlocked
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      message: Merci de vérifier la porte d'entrée !
+      title: ⚠️ Serrure bloquée ‼️
+  - service: notify.mobile_app_iphone_celia
+    data:
+      title: ⚠️ Serrure bloquée ‼️
+      message: Merci de vérifier la porte d'entrée !
+  mode: single
+- id: '1675456678648'
+  alias: '[GARAGE] Extinction automatique de l''imprimante 3D'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.octoprint_printing
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 30
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.mobile_app_papamica_iphone_12
+    data:
+      title: "\U0001F5A8️ Extinction automatique"
+      message: L'impression 3D est terminée depuis 30 min. L'imprimante va s'éteindre
+        automatiquement.
+  - if:
+    - condition: state
+      entity_id: light.lumiere_garage
+      state: 'on'
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 0
+    then:
+    - service: notify.mobile_app_papamica_iphone_12
+      data:
+        title: "\U0001F5A8️ Extinction automatique annulée"
+        message: 'Votre présence à été détectée : l''extinction automatique est annulée.'
+    else:
+    - delay:
+        hours: 0
+        minutes: 10
+        seconds: 0
+        milliseconds: 0
+    - type: turn_off
+      device_id: 7d4e4254eafdfc95a5181eb9135197f4
+      entity_id: switch.prise_atelier_outlet
+      domain: switch
+    - service: notify.mobile_app_papamica_iphone_12
+      data:
+        title: "\U0001F5A8️ Extinction automatique effectuée"
+        message: La prise Atelier viens d'être désactivée.
+  mode: single
+- id: '1675456991180'
+  alias: '[NOTIFICATION] Celia rentre'
+  description: ''
+  trigger:
+  - platform: zone
+    entity_id: person.celia
+    zone: zone.creche
+    event: leave
+  condition:
+  - condition: zone
+    entity_id: person.papamica
+    zone: zone.home
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      title: "\U0001F64B\U0001F3FC‍♀️ Celia arrive !"
+      message: Celia viens de partir de la crèche.
+  mode: single
+- id: '1675501118625'
+  alias: '[NOTIFICATION] Compteur eau'
+  description: ''
+  trigger:
+  - type: not_connected
+    platform: device
+    device_id: 50540deea18efb1ed71f1080d078ec5e
+    entity_id: binary_sensor.technique_esp32_eau_statut
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+  condition: []
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      title: "\U0001FAAB Compteur Eau"
+      message: Il y a un soucis de connexion !
+  mode: single
+- id: '1675501279605'
+  alias: '[NOTIFICATION] Compteur Linky'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.technique_lixee_papp
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.mobile_app_papamica_iphone_14_pro
+    data:
+      title: "\U0001FAAB Compteur Linky"
+      message: Il y a un soucis de connexion !
+  mode: single
+- id: '1675534771597'
+  alias: '[VOLETS] Fermer les volets au couché du soleil'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sun.sun
+    from: above_horizon
+    to: below_horizon
+  condition: []
+  action:
+  - device_id: 4da75055baa4e66c6f63bd5143f23f70
+    domain: cover
+    entity_id: cover.cuisine_volets
+    type: set_position
+    position: 0
+  - device_id: 8d26f659d61d71eabf606c1560db73d0
+    domain: cover
+    entity_id: cover.salle_volets
+    type: set_position
+    position: 0
+  - device_id: b2101ec4d6bf75000cbb0d9564da9178
+    domain: cover
+    entity_id: cover.salon_volets
+    type: set_position
+    position: 0
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: c167d7183b0fbd2e04d8fb6e426b6113
+    domain: cover
+    entity_id: cover.volets_du_premier_2
+    type: set_position
+    position: 0
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: c167d7183b0fbd2e04d8fb6e426b6113
+    domain: cover
+    entity_id: cover.volets_du_rez_de_chaussee
+    type: set_position
+    position: 0
+  mode: single
+- id: '1675535014695'
+  alias: '[ESCALIERS] Lumières automatique'
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.hue_motion_sensor_1_motion
+      light_target:
+        entity_id:
+        - light.lumiere_escaliers
+        - light.lumiere_escalier_bas
+      no_motion_wait: 10
+- id: '1675539498875'
+  alias: '|SALON] Lumière des escaliers automatique'
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: e86470f88e3595e5e551ce98def55b3b
+    entity_id: binary_sensor.hue_motion_sensor_2_motion
+    domain: binary_sensor
+  condition:
+  - condition: state
+    entity_id: light.groupe_lumieres_cuisine
+    state: 'off'
+    enabled: false
+  - condition: state
+    entity_id: light.groupe_lumieres_salon
+    state: 'off'
+    enabled: false
+  - type: is_illuminance
+    condition: device
+    device_id: e86470f88e3595e5e551ce98def55b3b
+    entity_id: sensor.hue_motion_sensor_2_illuminance
+    domain: sensor
+    below: 6
+  action:
+  - type: turn_on
+    device_id: 04d5eacc8e8d791519f96d859aab9da8
+    entity_id: light.salon_led_escaliers
+    domain: light
+    brightness_pct: 100
+  - wait_for_trigger:
+    - type: no_motion
+      platform: device
+      device_id: e86470f88e3595e5e551ce98def55b3b
+      entity_id: binary_sensor.hue_motion_sensor_2_motion
+      domain: binary_sensor
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 30
+  - type: turn_off
+    device_id: 04d5eacc8e8d791519f96d859aab9da8
+    entity_id: light.salon_led_escaliers
+    domain: light
+  mode: single
+- id: '1675598966714'
+  alias: '[ESCALIERS] Lumières automatique v2'
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: dcfc8c8e7953f4e7feaba92d5e89fe78
+    entity_id: binary_sensor.hue_motion_sensor_1_motion
+    domain: binary_sensor
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: person.papamica
+      state: home
+    - condition: state
+      entity_id: person.celia
+      state: home
+  action:
+  - type: turn_on
+    device_id: 3a2146842da14218f02f7cd0ed2ca9f9
+    entity_id: light.lumiere_escalier_bas
+    domain: light
+  - if:
+    - type: is_illuminance
+      condition: device
+      device_id: dcfc8c8e7953f4e7feaba92d5e89fe78
+      entity_id: sensor.hue_motion_sensor_1_illuminance
+      domain: sensor
+      below: 4
+    then:
+    - type: turn_on
+      device_id: 1af23e64502b0f7424aab77ccc7b204e
+      entity_id: light.lumiere_escaliers
+      domain: light
+    else: []
+  - wait_for_trigger:
+    - type: no_motion
+      platform: device
+      device_id: dcfc8c8e7953f4e7feaba92d5e89fe78
+      entity_id: binary_sensor.hue_motion_sensor_1_motion
+      domain: binary_sensor
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 10
+  - type: turn_off
+    device_id: 3a2146842da14218f02f7cd0ed2ca9f9
+    entity_id: light.lumiere_escalier_bas
+    domain: light
+  - type: turn_off
+    device_id: 1af23e64502b0f7424aab77ccc7b204e
+    entity_id: light.lumiere_escaliers
+    domain: light
+  mode: single
+- id: '1676299926747'
+  alias: '[NOTIFICATION] Mail hebdomadaire'
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - service: notify.notification_mail
+    data:
+      message: test
+      title: test
+  mode: single
+- id: '1677149771622'
+  alias: '[SYSTEME] Reload Emporia'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.rdc_prises_5_1min
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  - platform: state
+    entity_id:
+    - sensor.compteur_electrique_123_1min
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - service: homeassistant.reload_config_entry
+    data:
+      entry_id: c7a897242d9890d53fbe5b364638a05e
+  mode: single

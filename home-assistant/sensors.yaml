@@ -1,0 +1,61 @@
+# All lights
+- platform: template
+  sensors:
+    count_lights_on:
+      friendly_name: "# Lights on"
+      unit_of_measurement: "Allumée(s)"
+      value_template: "{{ states.light | selectattr('state', 'eq', 'on') | list | count }}"
+
+# Garage door status
+- platform: template
+  sensors:
+    status_porte_garage:
+      friendly_name: "Status porte garage"
+      unique_id: status_porte_garage
+      unit_of_measurement: " "
+      value_template: >
+        {% if is_state('binary_sensor.garage_capteur_porte_garage_contact', 'on') %}
+          100
+        {% else %}
+          0
+        {% endif %}
+
+# Test home connexion (Orange)
+- platform: command_line
+  name: "SpeedTest CLI Data"
+  unique_id: speedtest_cli_data
+  command: "/config/3rdparty/speedtest/speedtest -I ens3 --format=json --accept-license --accept-gdpr"
+  scan_interval: 3570
+  command_timeout: 120
+  value_template: >-
+    {{ 
+      { 
+        "ping": value_json.ping.latency, 
+        "download": value_json.download.bandwidth, 
+        "upload": value_json.upload.bandwidth,
+        "isp": value_json.isp,
+        "externalip": value_json.interface.externalIp,
+        "url": value_json.result.url
+      }
+      | to_json 
+    }}
+
+# Test home connexion (Starlink)
+- platform: command_line
+  name: "SpeedTest CLI Data 2"
+  unique_id: speedtest_cli_data_2
+  command: "/config/3rdparty/speedtest/speedtest -I ens4 --format=json --accept-license --accept-gdpr"
+  scan_interval: 3630
+  command_timeout: 120
+  value_template: >-
+    {{ 
+      { 
+        "ping": value_json.ping.latency, 
+        "download": value_json.download.bandwidth, 
+        "upload": value_json.upload.bandwidth,
+        "isp": value_json.isp,
+        "externalip": value_json.interface.externalIp,
+        "url": value_json.result.url
+      }
+      | to_json 
+    }}
