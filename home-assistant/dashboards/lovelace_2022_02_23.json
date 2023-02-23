@@ -1,0 +1,1674 @@
+{
+    "version": 1,
+    "minor_version": 1,
+    "key": "lovelace",
+    "data": {
+      "config": {
+        "title": "Maison",
+        "views": [
+          {
+            "theme": "ios-dark-mode-blue-red-alternative",
+            "title": "Dashboard",
+            "path": "dashboard",
+            "icon": "mdi:home-assistant",
+            "badges": [],
+            "cards": [
+              {
+                "square": false,
+                "columns": 2,
+                "type": "grid",
+                "cards": [
+                  {
+                    "type": "custom:mushroom-person-card",
+                    "entity": "person.papamica",
+                    "name": "Mickael",
+                    "fill_container": false,
+                    "use_entity_picture": true
+                  },
+                  {
+                    "type": "custom:mushroom-person-card",
+                    "entity": "person.celia",
+                    "name": "Celia",
+                    "use_entity_picture": true
+                  }
+                ]
+              },
+              {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "custom:mushroom-chips-card",
+                    "chips": [
+                      {
+                        "type": "entity",
+                        "entity": "sensor.boite_aux_lettre_capteur_de_mouvement_battery",
+                        "icon_color": "green",
+                        "name": "Courrier",
+                        "use_entity_picture": false,
+                        "content_info": "name",
+                        "icon": "mdi:mailbox-outline"
+                      },
+                      {
+                        "type": "entity",
+                        "entity": "input_number.releve_de_gaz",
+                        "icon_color": "green",
+                        "icon": "mdi:fire",
+                        "name": "Gaz",
+                        "content_info": "name"
+                      },
+                      {
+                        "type": "entity",
+                        "entity": "sensor.technique_lixee_papp",
+                        "icon": "mdi:lightning-bolt-outline",
+                        "content_info": "name",
+                        "name": "Electricité",
+                        "icon_color": "green"
+                      },
+                      {
+                        "type": "entity",
+                        "entity": "binary_sensor.technique_esp32_eau_statut",
+                        "icon": "mdi:water",
+                        "icon_color": "green",
+                        "name": "Eau",
+                        "content_info": "name"
+                      },
+                      {
+                        "type": "entity",
+                        "entity": "binary_sensor.technique_esp32_volets_statut",
+                        "name": "Volets",
+                        "content_info": "name",
+                        "icon_color": "green",
+                        "icon": "mdi:window-shutter-settings"
+                      }
+                    ],
+                    "alignment": "center"
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-lock-card",
+                        "entity": "lock.entree_serrure",
+                        "name": "Porte Entrée",
+                        "fill_container": false
+                      },
+                      {
+                        "type": "custom:mushroom-cover-card",
+                        "entity": "cover.porte_garage_v2",
+                        "show_position_control": false,
+                        "show_tilt_position_control": false,
+                        "show_buttons_control": true,
+                        "name": "Porte du Garage"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "input_boolean.courrier_present",
+                        "name": "Courrier",
+                        "layout": "vertical",
+                        "fill_container": true,
+                        "secondary_info": "state",
+                        "icon_color": "green"
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.compteur_de_gaz_jour_cout",
+                        "icon": "mdi:fire",
+                        "name": "Gaz",
+                        "layout": "vertical",
+                        "icon_color": "red"
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.compteur_eau_jour_cout",
+                        "name": "Eau",
+                        "layout": "vertical",
+                        "icon": "mdi:water"
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.compteur_electricite_jour_cout",
+                        "layout": "vertical",
+                        "name": "Electricité",
+                        "icon": "mdi:lightning-bolt-outline",
+                        "icon_color": "yellow"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-climate-card",
+                        "entity": "climate.piece_1",
+                        "fill_container": true,
+                        "layout": "vertical",
+                        "show_temperature_control": true,
+                        "collapsible_controls": false,
+                        "hvac_modes": [
+                          "auto",
+                          "heat",
+                          "off"
+                        ],
+                        "icon": "mdi:sofa"
+                      },
+                      {
+                        "type": "custom:mushroom-climate-card",
+                        "entity": "climate.chambre_thermostat_2",
+                        "icon": "mdi:bed-king",
+                        "fill_container": true,
+                        "hvac_modes": [
+                          "auto",
+                          "heat",
+                          "off"
+                        ],
+                        "show_temperature_control": true,
+                        "layout": "vertical"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-climate-card",
+                        "entity": "climate.salon_climatisation",
+                        "icon": "mdi:sofa",
+                        "name": "Climatisation Salon",
+                        "fill_container": true,
+                        "layout": "vertical",
+                        "show_temperature_control": true,
+                        "hvac_modes": [
+                          "auto",
+                          "heat",
+                          "cool",
+                          "fan_only",
+                          "off"
+                        ]
+                      },
+                      {
+                        "type": "custom:mushroom-climate-card",
+                        "entity": "climate.salon_climatisation",
+                        "name": "Climatisation Chambre",
+                        "icon": "mdi:bed-king",
+                        "layout": "vertical",
+                        "fill_container": true,
+                        "hvac_modes": [
+                          "auto",
+                          "heat",
+                          "cool",
+                          "fan_only",
+                          "off"
+                        ],
+                        "show_temperature_control": true,
+                        "collapsible_controls": false
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_download_2",
+                        "name": "Starlink",
+                        "icon": "mdi:progress-download",
+                        "icon_color": "green"
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_upload_2",
+                        "icon": "mdi:progress-upload",
+                        "name": "Starlink"
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_ping_2",
+                        "name": "Starlink",
+                        "icon": "mdi:format-text-wrapping-wrap",
+                        "icon_color": "purple"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_download",
+                        "name": "Orange",
+                        "icon": "mdi:progress-download",
+                        "icon_color": "green"
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_upload",
+                        "icon": "mdi:progress-upload",
+                        "name": "Orange"
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_ping",
+                        "name": "Orange",
+                        "icon": "mdi:format-text-wrapping-wrap",
+                        "icon_color": "purple"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "custom:mushroom-light-card",
+                    "entity": "light.toutes_les_lumeres",
+                    "name": "Toutes les lumières"
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "entity": "light.lumieres_chambre",
+                        "layout": "vertical",
+                        "fill_container": false,
+                        "name": "Chambre",
+                        "icon": "",
+                        "use_light_color": false,
+                        "secondary_info": "state"
+                      },
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "entity": "light.lumieres_chambre",
+                        "layout": "vertical",
+                        "name": "Enfant",
+                        "use_light_color": false,
+                        "icon": "mdi:teddy-bear"
+                      },
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "entity": "light.groupe_lumieres_salon",
+                        "layout": "vertical",
+                        "name": "Salon",
+                        "use_light_color": false,
+                        "tap_action": {
+                          "action": "toggle"
+                        }
+                      },
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "entity": "light.groupe_lumieres_cuisine",
+                        "layout": "vertical",
+                        "use_light_color": false,
+                        "name": "Cuisine"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "entity": "light.groupe_lumieres_entree",
+                        "layout": "vertical",
+                        "name": "Entrée",
+                        "use_light_color": false
+                      },
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "entity": "light.groupe_lumieres_escaliers",
+                        "layout": "vertical",
+                        "name": "Escaliers",
+                        "use_light_color": false
+                      },
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "name": "Bureau",
+                        "use_light_color": false,
+                        "layout": "vertical",
+                        "entity": "light.groupe_lumieres_bureau"
+                      },
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "entity": "light.groupe_lumieres_garage",
+                        "layout": "vertical",
+                        "name": "Garage",
+                        "use_light_color": false
+                      }
+                    ]
+                  },
+                  {
+                    "type": "custom:mushroom-cover-card",
+                    "entity": "cover.groupe_volets_tous",
+                    "name": "Tous les volets",
+                    "icon": "mdi:window-shutter-settings",
+                    "show_position_control": false
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-cover-card",
+                        "entity": "cover.salon_velux_2",
+                        "layout": "vertical",
+                        "show_buttons_control": true,
+                        "icon": ""
+                      },
+                      {
+                        "type": "custom:mushroom-cover-card",
+                        "entity": "cover.salle_velux",
+                        "layout": "vertical",
+                        "show_position_control": false,
+                        "show_buttons_control": true
+                      },
+                      {
+                        "type": "custom:mushroom-cover-card",
+                        "entity": "cover.cuisine_velux_2",
+                        "layout": "vertical",
+                        "show_position_control": false,
+                        "show_buttons_control": true
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-cover-card",
+                        "entity": "cover.salon_volets",
+                        "name": "Salon",
+                        "layout": "vertical"
+                      },
+                      {
+                        "type": "custom:mushroom-cover-card",
+                        "entity": "cover.salle_volets",
+                        "name": "Millieu",
+                        "layout": "vertical"
+                      },
+                      {
+                        "type": "custom:mushroom-cover-card",
+                        "entity": "cover.cuisine_volets",
+                        "name": "Cuisine",
+                        "layout": "vertical"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-cover-card",
+                        "entity": "cover.volets_du_rez_de_chaussee",
+                        "icon": "mdi:window-shutter",
+                        "name": "RDC",
+                        "layout": "vertical"
+                      },
+                      {
+                        "type": "custom:mushroom-cover-card",
+                        "entity": "cover.volets_du_premier_2",
+                        "icon": "mdi:window-shutter",
+                        "name": "1er étage",
+                        "layout": "vertical"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "camera_view": "live",
+                    "type": "picture-glance",
+                    "title": "Entrée du garage",
+                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                    "entities": [
+                      {
+                        "entity": "binary_sensor.camera_entree_du_garage_motion"
+                      },
+                      {
+                        "entity": "binary_sensor.garage_capteur_porte_garage_contact"
+                      }
+                    ],
+                    "camera_image": "camera.camera_entree_du_garage_high",
+                    "theme": "Mushroom Shadow"
+                  },
+                  {
+                    "camera_view": "live",
+                    "type": "picture-glance",
+                    "title": "Terrasse",
+                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                    "entities": [
+                      {
+                        "entity": "binary_sensor.camera_terrasse_motion"
+                      },
+                      {
+                        "entity": "alarm_control_panel.alarmo"
+                      },
+                      {
+                        "entity": "binary_sensor.maison_st_julien"
+                      }
+                    ],
+                    "camera_image": "camera.camera_terrasse_high"
+                  },
+                  {
+                    "camera_view": "live",
+                    "type": "picture-glance",
+                    "title": "Salon",
+                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                    "entities": [
+                      {
+                        "entity": "light.groupe_lumieres_salon"
+                      },
+                      {
+                        "entity": "cover.salon_volets"
+                      },
+                      {
+                        "entity": "cover.salon_velux_2"
+                      },
+                      {
+                        "entity": "cover.salle_volets"
+                      },
+                      {
+                        "entity": "cover.salle_velux"
+                      },
+                      {
+                        "entity": "cover.cuisine_volets"
+                      },
+                      {
+                        "entity": "cover.cuisine_velux_2"
+                      },
+                      {
+                        "entity": "cover.volets_du_premier_2"
+                      }
+                    ],
+                    "camera_image": "camera.10_20_0_71"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "theme": "ios-dark-mode-blue-red",
+            "path": "temperature",
+            "icon": "mdi:home-thermometer",
+            "layout": {
+              "grid-template-columns": "33% 67%",
+              "grid-template-areas": "\"control graph\"\n"
+            },
+            "badges": [],
+            "cards": [
+              {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "thermostat",
+                    "entity": "climate.piece_1"
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-fan-card",
+                        "entity": "fan.prise_atelier",
+                        "icon_animation": true,
+                        "icon": "mdi:fan",
+                        "name": "Climatisation",
+                        "fill_container": false,
+                        "show_oscillate_control": false,
+                        "show_percentage_control": false
+                      },
+                      {
+                        "type": "custom:mushroom-fan-card",
+                        "entity": "fan.prise_atelier",
+                        "name": "Boost Chauffage",
+                        "icon": "mdi:fire"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "custom:mini-graph-card",
+                    "entities": [
+                      {
+                        "entity": "sensor.piece_1_temperature",
+                        "name": "Température Salon (3 jours)",
+                        "show_points": false
+                      }
+                    ],
+                    "hours_to_show": 72,
+                    "points_per_hour": 3,
+                    "align_state": "left",
+                    "show": {
+                      "name": true,
+                      "legend": true,
+                      "icon": true,
+                      "labels": true
+                    }
+                  },
+                  {
+                    "type": "custom:mini-graph-card",
+                    "entities": [
+                      {
+                        "entity": "sensor.piece_1_humidity",
+                        "name": "Humidité Salon (3 jours)",
+                        "show_points": false,
+                        "color": "#3498DB"
+                      }
+                    ],
+                    "hours_to_show": 72,
+                    "points_per_hour": 3,
+                    "align_state": "left",
+                    "show": {
+                      "name": true,
+                      "legend": true,
+                      "icon": true,
+                      "labels": true
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "thermostat",
+                    "entity": "climate.chambre_thermostat_2"
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-fan-card",
+                        "entity": "fan.prise_atelier",
+                        "icon_animation": true,
+                        "icon": "mdi:fan",
+                        "name": "Climatisation",
+                        "fill_container": false,
+                        "show_oscillate_control": false,
+                        "show_percentage_control": false
+                      },
+                      {
+                        "type": "custom:mushroom-fan-card",
+                        "entity": "fan.prise_atelier",
+                        "name": "Boost Chauffage",
+                        "icon": "mdi:fire"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "custom:mini-graph-card",
+                    "entities": [
+                      {
+                        "entity": "sensor.chambre_thermostat_temperature_2",
+                        "name": "Température Chambre (3 jours)",
+                        "show_points": false
+                      }
+                    ],
+                    "hours_to_show": 72,
+                    "points_per_hour": 3,
+                    "align_state": "left",
+                    "show": {
+                      "name": true,
+                      "legend": true,
+                      "icon": true,
+                      "labels": true
+                    }
+                  },
+                  {
+                    "type": "custom:mini-graph-card",
+                    "entities": [
+                      {
+                        "entity": "sensor.chambre_thermostat_humidity_2",
+                        "name": "Humidité Chambre (3 jours)",
+                        "show_points": false,
+                        "color": "#3498DB"
+                      }
+                    ],
+                    "hours_to_show": 72,
+                    "points_per_hour": 3,
+                    "align_state": "left",
+                    "show": {
+                      "name": true,
+                      "legend": true,
+                      "icon": true,
+                      "labels": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "theme": "ios-dark-mode-blue-red",
+            "path": "electricite",
+            "icon": "mdi:home-lightning-bolt",
+            "type": "custom:grid-layout",
+            "badges": [],
+            "cards": [
+              {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-title-card",
+                        "title": "Consommation de la maison"
+                      },
+                      {
+                        "type": "energy-date-selection"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "energy-sources-table"
+                      },
+                      {
+                        "type": "energy-distribution",
+                        "link_dashboard": true
+                      },
+                      {
+                        "type": "custom:mini-graph-card",
+                        "name": "Chauffage et climatisation (24h)",
+                        "hours_to_show": 24,
+                        "points_per_hour": 6,
+                        "entities": [
+                          {
+                            "entity": "sensor.chambre_thermostat_heating_2",
+                            "name": "Chauffage Chambre",
+                            "show_points": false,
+                            "color": "#C70039 "
+                          },
+                          {
+                            "entity": "sensor.piece_1_heating",
+                            "name": "Chauffage Salon",
+                            "show_points": false,
+                            "color": "#FF5252"
+                          }
+                        ],
+                        "show": {
+                          "icon": false,
+                          "name": false,
+                          "state": false
+                        },
+                        "line_width": 2
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "horizontal-stack",
+                        "cards": [
+                          {
+                            "type": "vertical-stack",
+                            "cards": [
+                              {
+                                "type": "custom:mushroom-title-card",
+                                "title": "Consommmation électricité ",
+                                "alignment": "center"
+                              },
+                              {
+                                "type": "energy-usage-graph"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "vertical-stack",
+                            "cards": [
+                              {
+                                "type": "custom:mushroom-title-card",
+                                "title": "Consommmation Gaz ",
+                                "alignment": "center"
+                              },
+                              {
+                                "type": "energy-gas-graph"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "vertical-stack",
+                            "cards": [
+                              {
+                                "type": "custom:mushroom-title-card",
+                                "title": "Consommmation Eau ",
+                                "alignment": "center"
+                              },
+                              {
+                                "type": "energy-water-graph"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "horizontal-stack",
+                        "cards": [
+                          {
+                            "type": "vertical-stack",
+                            "cards": [
+                              {
+                                "type": "custom:mushroom-title-card",
+                                "title": "Consommation électrique par équipements",
+                                "alignment": "center"
+                              },
+                              {
+                                "type": "energy-devices-graph"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "vertical-stack",
+                            "cards": [
+                              {
+                                "type": "custom:mushroom-title-card",
+                                "title": "Consommation par équipement (Live)",
+                                "alignment": "center"
+                              },
+                              {
+                                "type": "vertical-stack",
+                                "theme": "ios-dark-mode-blue-red",
+                                "cards": [
+                                  {
+                                    "type": "horizontal-stack",
+                                    "theme": "ios-dark-mode-blue-red",
+                                    "cards": [
+                                      {
+                                        "type": "gauge",
+                                        "name": "Total",
+                                        "entity": "sensor.total_power",
+                                        "unit": "W",
+                                        "theme": "ios-dark-mode-blue-red",
+                                        "min": 0,
+                                        "needle": true,
+                                        "severity": {
+                                          "green": 0,
+                                          "yellow": 500,
+                                          "red": 2000
+                                        },
+                                        "max": 5000
+                                      },
+                                      {
+                                        "type": "custom:config-template-card",
+                                        "theme": "ios-dark-mode-blue-red",
+                                        "variables": [
+                                          {
+                                            "entity": "sensor.prise_baie_informatique_power",
+                                            "name": "Baie Informatique"
+                                          },
+                                          {
+                                            "entity": "sensor.unmetered_power",
+                                            "name": "Puissance non identifié actuellement"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_lave_linge_power",
+                                            "name": "Lave Linge"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_seche_linge_power",
+                                            "name": "Sèche Linge"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_lave_vaisselles_power",
+                                            "name": "Lave Vaisselle"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_setup_tv_salon_power",
+                                            "name": "Setup TV Salon"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_setup_pc_power",
+                                            "name": "Setup PC Bureau"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_four_power",
+                                            "name": "Four"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_porte_garage_power",
+                                            "name": "Porte du Garage"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_velos_power",
+                                            "name": "Vélos"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_atelier_power",
+                                            "name": "Atelier"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_cuisine_power",
+                                            "name": "Cuisine"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_setup_tv_chambre_power",
+                                            "name": "Setup TV Chambre"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_setup_tv_bureau_power",
+                                            "name": "Setup TV Bureau"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_chaudiere_power",
+                                            "name": "Chaudière"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_adoucisseur_power",
+                                            "name": "Adoucisseur"
+                                          },
+                                          {
+                                            "entity": "sensor.salon_prise_setup_canape_power",
+                                            "name": "Setup Canapé"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_baie_reseau_power",
+                                            "name": "Baie Réseau"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_setup_entree_power",
+                                            "name": "Setup Entrée"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_setup_tv_salon_2_power",
+                                            "name": "Setup TV Salon 2"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_setup_lit_mica_power",
+                                            "name": "Setup Lit Mica"
+                                          },
+                                          {
+                                            "entity": "sensor.prise_setup_lit_celia_power",
+                                            "name": "Setup Lit Celia"
+                                          },
+                                          {
+                                            "entity": "sensor.cuisine_frigo_16_1min",
+                                            "name": "Rérigérateur"
+                                          },
+                                          {
+                                            "entity": "sensor.cuisine_plaque_electrique_1_1min",
+                                            "name": "Plaque Electrique"
+                                          },
+                                          {
+                                            "entity": "sensor.1er_etage_volets_7_1min",
+                                            "name": "Volets"
+                                          },
+                                          {
+                                            "entity": "sensor.1re_etage_eclairage_9_1min",
+                                            "name": "Eclairage 1er étage"
+                                          },
+                                          {
+                                            "entity": "sensor.chambre_enfant_prises_13_1min",
+                                            "name": "Prises Chambre Enfant"
+                                          },
+                                          {
+                                            "entity": "sensor.chambre_parents_eclairage_14_1min",
+                                            "name": "Eclairage Chambre Parents"
+                                          },
+                                          {
+                                            "entity": "sensor.climatisation_10_1min",
+                                            "name": "Climatisation"
+                                          },
+                                          {
+                                            "entity": "sensor.garage_eclairage_vmc_8_1min",
+                                            "name": "VMC & Eclairage Garage"
+                                          },
+                                          {
+                                            "entity": "sensor.technique_prise_compteur_3_1min",
+                                            "name": "Prises Compteurs"
+                                          },
+                                          {
+                                            "entity": "sensor.reste_rdc_prises_5_1min",
+                                            "name": "Reste des prises RDC"
+                                          },
+                                          {
+                                            "entity": "sensor.reste_cuisine_prises_4_1min",
+                                            "name": "Reste des prises Cuisine"
+                                          },
+                                          {
+                                            "entity": "sensor.reste_chambre_parent_prises_6_1min",
+                                            "name": "Reste des prises Chambre Parents"
+                                          },
+                                          {
+                                            "entity": "sensor.reste_1er_etage_prises_12_1min",
+                                            "name": "Reste des prises 1er étage"
+                                          }
+                                        ],
+                                        "entities": [
+                                          "sensor.unmetered_power",
+                                          "sensor.reste_1er_etage_prises_12_1min",
+                                          "sensor.reste_chambre_parent_prises_6_1min",
+                                          "sensor.reste_cuisine_prises_4_1min",
+                                          "sensor.reste_rdc_prises_5_1min",
+                                          "sensor.technique_prise_compteur_3_1min",
+                                          "sensor.garage_eclairage_vmc_8_1min",
+                                          "sensor.climatisation_10_1min",
+                                          "sensor.chambre_parents_eclairage_14_1min",
+                                          "sensor.chambre_enfant_prises_13_1min",
+                                          "sensor.1re_etage_eclairage_9_1min",
+                                          "sensor.1er_etage_volets_7_1min",
+                                          "sensor.cuisine_frigo_16_1min",
+                                          "sensor.cuisine_plaque_electrique_1_1min",
+                                          "sensor.prise_setup_lit_celia_power",
+                                          "sensor.prise_setup_lit_mica_power",
+                                          "sensor.prise_setup_tv_salon_2_power",
+                                          "sensor.prise_setup_entree_power",
+                                          "sensor.prise_baie_reseau_power",
+                                          "sensor.salon_prise_setup_canape_power",
+                                          "sensor.prise_chaudiere_power",
+                                          "sensor.prise_adoucisseur_power",
+                                          "sensor.prise_setup_tv_bureau_power",
+                                          "sensor.prise_setup_tv_chambre_power",
+                                          "sensor.prise_baie_informatique_power",
+                                          "sensor.prise_lave_linge_power",
+                                          "sensor.prise_seche_linge_power",
+                                          "sensor.prise_lave_vaisselles_power",
+                                          "sensor.prise_setup_tv_salon_power",
+                                          "sensor.prise_setup_pc_power",
+                                          "sensor.prise_four_power",
+                                          "sensor.prise_frigo_power",
+                                          "sensor.prise_velos_power",
+                                          "sensor.prise_atelier_power",
+                                          "sensor.prise_cuisine_power",
+                                          "sensor.prise_setup_tv_chambre_power"
+                                        ],
+                                        "element": {
+                                          "type": "custom:bar-card",
+                                          "theme": "ios-dark-mode-blue-red",
+                                          "entities": "${vars.filter(v => states[v.entity].state > 5).sort((v1,v2) => states[v2.entity].state-states[v1.entity].state)}",
+                                          "direction": "right",
+                                          "entity_row": true,
+                                          "min": 0,
+                                          "max": "${ Math.max(...vars.map(v => states[v.entity].state))}",
+                                          "height": "20px",
+                                          "stack": "vertical",
+                                          "decimal": 0,
+                                          "icon": "mdi:flash",
+                                          "positions": {
+                                            "icon": "off",
+                                            "indicator": "outside",
+                                            "name": "inside",
+                                            "value": "inside"
+                                          },
+                                          "severity": [
+                                            {
+                                              "color": "#a1a1a18a",
+                                              "from": 0,
+                                              "to": 2
+                                            },
+                                            {
+                                              "color": "#3ea8328a",
+                                              "from": 2,
+                                              "to": 10
+                                            },
+                                            {
+                                              "color": "#85a8328a",
+                                              "from": 10,
+                                              "to": 50
+                                            },
+                                            {
+                                              "color": "#a8a4328a",
+                                              "from": 50,
+                                              "to": 200
+                                            },
+                                            {
+                                              "color": "#a887328a",
+                                              "from": 200,
+                                              "to": 500
+                                            },
+                                            {
+                                              "color": "#a867328a",
+                                              "from": 500,
+                                              "to": 1000
+                                            },
+                                            {
+                                              "color": "#a846328a",
+                                              "from": 1000,
+                                              "to": 3000
+                                            },
+                                            {
+                                              "color": "#a832328a",
+                                              "from": 3000,
+                                              "to": 10000
+                                            }
+                                          ],
+                                          "style": "#states > * {\n  margin: 1px;\n}\nbar-card-name,\nbar-card-value {\n  font-size: 0.9rem;\n  color: #ffffffaa;\n  font-weight: bold;\n}\nbar-card-value\t{\n  font-weight: bolder;\n}\nbar-card-indicator {\n  margin-top: 4px;\n  transform: scaleY(-1);\n}"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "custom:mini-graph-card",
+                                    "hours_to_show": 1,
+                                    "points_per_hour": 60,
+                                    "entities": [
+                                      {
+                                        "entity": "sensor.total_power",
+                                        "show_points": false
+                                      }
+                                    ],
+                                    "show": {
+                                      "icon": false,
+                                      "name": false,
+                                      "state": false
+                                    },
+                                    "line_width": 2,
+                                    "color_thresholds": [
+                                      {
+                                        "value": 500,
+                                        "color": "green"
+                                      },
+                                      {
+                                        "value": 2000,
+                                        "color": "yellow"
+                                      },
+                                      {
+                                        "value": 5000,
+                                        "color": "red"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "theme": "ios-dark-mode-blue-red",
+            "icon": "mdi:cctv",
+            "badges": [],
+            "cards": [
+              {
+                "camera_view": "live",
+                "type": "picture-glance",
+                "title": "Terrasse",
+                "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                "entities": [
+                  {
+                    "entity": "binary_sensor.camera_terrasse_motion"
+                  },
+                  {
+                    "entity": "alarm_control_panel.alarmo"
+                  },
+                  {
+                    "entity": "binary_sensor.maison_st_julien"
+                  }
+                ],
+                "camera_image": "camera.camera_terrasse_high"
+              },
+              {
+                "camera_view": "live",
+                "type": "picture-glance",
+                "title": "Entrée du garage",
+                "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                "entities": [
+                  {
+                    "entity": "binary_sensor.camera_entree_du_garage_motion"
+                  },
+                  {
+                    "entity": "binary_sensor.garage_capteur_porte_garage_contact"
+                  }
+                ],
+                "camera_image": "camera.camera_entree_du_garage_high"
+              },
+              {
+                "camera_view": "live",
+                "type": "picture-glance",
+                "title": "Entrée",
+                "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                "entities": [
+                  {
+                    "entity": "binary_sensor.maison_st_julien"
+                  },
+                  {
+                    "entity": "light.groupe_lumieres_entree"
+                  }
+                ],
+                "camera_image": "camera.10_10_0_52"
+              },
+              {
+                "camera_view": "live",
+                "type": "picture-glance",
+                "title": "Garage",
+                "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                "entities": [
+                  {
+                    "entity": "binary_sensor.garage_detecteur_de_mouvement_occupancy"
+                  },
+                  {
+                    "entity": "sensor.technique_lixee_base"
+                  },
+                  {
+                    "entity": "sensor.technique_esp32_eau_consommation_jour"
+                  },
+                  {
+                    "entity": "input_number.puissance_gaz"
+                  },
+                  {
+                    "entity": "light.groupe_lumieres_garage"
+                  },
+                  {
+                    "entity": "cover.porte_garage_v2"
+                  }
+                ],
+                "camera_image": "camera.10_10_0_53"
+              },
+              {
+                "camera_view": "live",
+                "type": "picture-glance",
+                "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                "entities": [
+                  {
+                    "entity": "light.groupe_lumieres_salon"
+                  },
+                  {
+                    "entity": "cover.salon_volets"
+                  },
+                  {
+                    "entity": "cover.salon_velux_2"
+                  },
+                  {
+                    "entity": "cover.salle_volets"
+                  },
+                  {
+                    "entity": "cover.salle_velux"
+                  },
+                  {
+                    "entity": "cover.cuisine_volets"
+                  },
+                  {
+                    "entity": "cover.cuisine_velux_2"
+                  },
+                  {
+                    "entity": "cover.volets_du_premier_2"
+                  }
+                ],
+                "camera_image": "camera.10_20_0_71",
+                "title": "Salon"
+              }
+            ]
+          },
+          {
+            "theme": "ios-dark-mode-blue-red",
+            "icon": "mdi:check-network",
+            "badges": [],
+            "cards": [
+              {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "custom:mushroom-chips-card",
+                    "chips": [
+                      {
+                        "type": "entity",
+                        "entity": "sensor.speedtest_cli_download",
+                        "content_info": "last-changed",
+                        "icon": "mdi:clock-time-four-outline",
+                        "use_entity_picture": false
+                      },
+                      {
+                        "type": "entity",
+                        "entity": "sensor.speedtest_cli_fai",
+                        "icon": "mdi:router-wireless"
+                      },
+                      {
+                        "type": "entity",
+                        "entity": "sensor.speedtest_cli_ip_externe",
+                        "icon": "mdi:ip"
+                      },
+                      {
+                        "type": "action",
+                        "icon": "mdi:refresh",
+                        "tap_action": {
+                          "action": "call-service",
+                          "service": "homeassistant.update_entity",
+                          "data": {},
+                          "target": {
+                            "entity_id": "sensor.speedtest_cli_data"
+                          }
+                        }
+                      }
+                    ],
+                    "alignment": "center"
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_download",
+                        "name": "Download",
+                        "icon": "mdi:progress-download",
+                        "icon_color": "green"
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_upload",
+                        "name": "Upload",
+                        "icon": "mdi:progress-upload"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "custom:mini-graph-card",
+                    "entities": [
+                      {
+                        "entity": "sensor.speedtest_cli_download",
+                        "name": "Download",
+                        "show_points": false,
+                        "color": "green"
+                      },
+                      {
+                        "entity": "sensor.speedtest_cli_upload",
+                        "name": "Upload",
+                        "show_points": false
+                      }
+                    ],
+                    "hours_to_show": 24,
+                    "points_per_hour": 1,
+                    "align_state": "left",
+                    "show": {
+                      "name": false,
+                      "legend": true,
+                      "icon": false,
+                      "labels": true
+                    }
+                  },
+                  {
+                    "type": "custom:mini-graph-card",
+                    "entities": [
+                      {
+                        "entity": "sensor.speedtest_cli_ping",
+                        "name": "Ping",
+                        "show_points": false
+                      }
+                    ],
+                    "hours_to_show": 24,
+                    "points_per_hour": 1,
+                    "align_state": "left",
+                    "show": {
+                      "name": false,
+                      "legend": true,
+                      "icon": false,
+                      "labels": true
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "custom:mushroom-chips-card",
+                    "chips": [
+                      {
+                        "type": "entity",
+                        "entity": "sensor.speedtest_cli_download_2",
+                        "content_info": "last-updated",
+                        "icon": "mdi:clock-time-five-outline"
+                      },
+                      {
+                        "type": "entity",
+                        "entity": "sensor.speedtest_cli_fai_2",
+                        "icon": "mdi:router-wireless"
+                      },
+                      {
+                        "type": "entity",
+                        "entity": "sensor.speedtest_cli_ip_externe_2",
+                        "icon": "mdi:ip"
+                      },
+                      {
+                        "type": "action",
+                        "icon": "mdi:refresh",
+                        "tap_action": {
+                          "action": "call-service",
+                          "service": "homeassistant.update_entity",
+                          "data": {},
+                          "target": {
+                            "entity_id": "sensor.speedtest_cli_data_2"
+                          }
+                        }
+                      }
+                    ],
+                    "alignment": "center"
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_download_2",
+                        "name": "Download",
+                        "icon": "mdi:progress-download",
+                        "icon_color": "green"
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "sensor.speedtest_cli_upload_2",
+                        "name": "Upload",
+                        "icon": "mdi:progress-upload"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "custom:mini-graph-card",
+                    "entities": [
+                      {
+                        "entity": "sensor.speedtest_cli_download_2",
+                        "name": "Download",
+                        "show_points": false,
+                        "color": "green"
+                      },
+                      {
+                        "entity": "sensor.speedtest_cli_upload_2",
+                        "name": "Upload",
+                        "show_points": false
+                      }
+                    ],
+                    "hours_to_show": 24,
+                    "points_per_hour": 1,
+                    "align_state": "left",
+                    "show": {
+                      "name": false,
+                      "legend": true,
+                      "icon": false,
+                      "labels": true
+                    }
+                  },
+                  {
+                    "type": "custom:mini-graph-card",
+                    "entities": [
+                      {
+                        "entity": "sensor.speedtest_cli_ping_2",
+                        "name": "Ping",
+                        "show_points": false
+                      }
+                    ],
+                    "hours_to_show": 24,
+                    "points_per_hour": 1,
+                    "align_state": "left",
+                    "show": {
+                      "name": false,
+                      "legend": true,
+                      "icon": false,
+                      "labels": true
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "entities",
+                "entities": [
+                  {
+                    "entity": "update.udm_pro"
+                  },
+                  {
+                    "entity": "update.switch_baie"
+                  },
+                  {
+                    "entity": "update.borne_wi_fi_chambre"
+                  },
+                  {
+                    "entity": "update.borne_wi_fi_bureau"
+                  },
+                  {
+                    "entity": "update.borne_wi_fi_salon"
+                  },
+                  {
+                    "entity": "update.home_assistant_core_update"
+                  },
+                  {
+                    "entity": "update.home_assistant_supervisor_update"
+                  }
+                ],
+                "state_color": false
+              },
+              {
+                "type": "entities",
+                "entities": [
+                  {
+                    "entity": "sensor.nas_papamica_2_disk_1_status",
+                    "name": "NAS Disque #1",
+                    "icon": "mdi:harddisk"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_disk_2_status",
+                    "name": "NAS Disque #2",
+                    "icon": "mdi:harddisk"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_disk_3_status",
+                    "name": "NAS Disque #3",
+                    "icon": "mdi:harddisk"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_disk_4_status",
+                    "name": "NAS Disque #4",
+                    "icon": "mdi:harddisk"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_volume_1_status",
+                    "name": "Status Volume #1",
+                    "icon": "mdi:nas"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_volume_1_volume_used",
+                    "name": "Utilisation Volume #1",
+                    "icon": "mdi:chart-donut"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_volume_2_status",
+                    "name": "Status Volume #2",
+                    "icon": "mdi:nas"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_volume_2_volume_used",
+                    "name": "Utilisation Volume #2",
+                    "icon": "mdi:chart-donut"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_cpu_utilization_total",
+                    "name": "NAS CPU Utilisation",
+                    "icon": "mdi:cpu-64-bit"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_memory_usage_real",
+                    "name": "NAS RAM Utilisation",
+                    "icon": "mdi:memory"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_upload_throughput",
+                    "name": "NAS Upload"
+                  },
+                  {
+                    "entity": "sensor.nas_papamica_2_download_throughput",
+                    "name": "NAS Download"
+                  }
+                ],
+                "state_color": false
+              }
+            ]
+          },
+          {
+            "theme": "ios-dark-mode-blue-red",
+            "title": "Batteries",
+            "path": "batteries",
+            "icon": "mdi:home-battery-outline",
+            "type": "panel",
+            "badges": [],
+            "cards": [
+              {
+                "type": "custom:auto-entities",
+                "card": {
+                  "type": "custom:bar-card",
+                  "title_position": "inside",
+                  "height": 38,
+                  "positions": {
+                    "icon": "inside",
+                    "indicator": "inside",
+                    "name": "inside",
+                    "value": "inside"
+                  },
+                  "show_icon": true,
+                  "max": 100,
+                  "unit_of_measurement": "%",
+                  "severity": [
+                    {
+                      "color": "#d11e1e",
+                      "from": 0,
+                      "to": 5
+                    },
+                    {
+                      "color": "#cf2d11",
+                      "from": 6,
+                      "to": 10
+                    },
+                    {
+                      "color": "#cc3900",
+                      "from": 11,
+                      "to": 15
+                    },
+                    {
+                      "color": "#c84400",
+                      "from": 16,
+                      "to": 20
+                    },
+                    {
+                      "color": "#c44d00",
+                      "from": 21,
+                      "to": 25
+                    },
+                    {
+                      "color": "#bf5600",
+                      "from": 26,
+                      "to": 30
+                    },
+                    {
+                      "color": "#b95f00",
+                      "from": 31,
+                      "to": 35
+                    },
+                    {
+                      "color": "#b36600",
+                      "from": 36,
+                      "to": 40
+                    },
+                    {
+                      "color": "#ac6e00",
+                      "from": 41,
+                      "to": 45
+                    },
+                    {
+                      "color": "#a57500",
+                      "from": 46,
+                      "to": 50
+                    },
+                    {
+                      "color": "#9d7b00",
+                      "from": 51,
+                      "to": 55
+                    },
+                    {
+                      "color": "#948100",
+                      "from": 56,
+                      "to": 60
+                    },
+                    {
+                      "color": "#8b8700",
+                      "from": 61,
+                      "to": 65
+                    },
+                    {
+                      "color": "#818d00",
+                      "from": 66,
+                      "to": 70
+                    },
+                    {
+                      "color": "#769200",
+                      "from": 71,
+                      "to": 75
+                    },
+                    {
+                      "color": "#6a9700",
+                      "from": 76,
+                      "to": 80
+                    },
+                    {
+                      "color": "#5d9c00",
+                      "from": 81,
+                      "to": 85
+                    },
+                    {
+                      "color": "#4da100",
+                      "from": 86,
+                      "to": 90
+                    },
+                    {
+                      "color": "#39a500",
+                      "from": 91,
+                      "to": 95
+                    },
+                    {
+                      "color": "#15a911",
+                      "from": 96,
+                      "to": 100
+                    }
+                  ],
+                  "style": "bar-card-currentbar, bar-card-current, bar-card-backgroundbar {\n\n    height: 5px !important;\n    margin-top: 30px;\n}\nha-card {\n    background: none;\n    box-shadow: none;\n}\nha-icon{\n  color: white !important;\n}\nbar-card-iconbar {\n    margin-bottom: 10px;\n}\n",
+                  "animation": {
+                    "state": "on",
+                    "speed": "2"
+                  }
+                },
+                "filter": {
+                  "exclude": [
+                    {
+                      "entity_id": "^sensor.robonect*$"
+                    }
+                  ],
+                  "include": [
+                    {
+                      "entity_id": "^sensor.radiateur_*_battery_level$"
+                    },
+                    {
+                      "entity_id": "^sensor.*_battery$"
+                    },
+                    {
+                      "entity_id": "^sensor.tpms*_batt$"
+                    },
+                    {
+                      "entity_id": "^sensor.*_battery_charge$"
+                    }
+                  ]
+                },
+                "sort": {
+                  "method": "friendly_name"
+                },
+                "show_empty": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
