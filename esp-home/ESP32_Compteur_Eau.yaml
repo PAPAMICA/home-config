@@ -97,11 +97,11 @@ sensor:
     pin: 17
     unit_of_measurement: "l/mn"
     icon: mdi:water
-    internal_filter: 100ms
-    name: "Debit Eau (l)"
+    #internal_filter: 100ms
+    name: "Debit Eau"
     state_class: measurement
     filters:
-      - lambda: return (x * 10); # 1 impulsion = 10 l
+      - lambda: return x / 487; # 1l = 487 impulsions
       
 #########################
 # Total eau usage today
@@ -109,8 +109,8 @@ sensor:
       unit_of_measurement: "l"
       name: 'Eau Consommation Jour'
       filters:
-        - multiply: 0.01 # (pour avoir des m3)
-      accuracy_decimals: 3
+        - lambda: return x / 487; # (pour avoir des litres)
+      accuracy_decimals: 2
       icon: mdi:water
       id: eau_conso_jour
       device_class: "water"
@@ -123,24 +123,24 @@ sensor:
     device_class: "water"
     id: eau_conso_veille
     unit_of_measurement: "l"
-    accuracy_decimals: 3
+    accuracy_decimals: 2
     icon: mdi:water
     update_interval: 10s 
       
 ######################### 
-# Total gaz power today
+# Total eau m3 today
   - platform: template
     name: "Eau m3 Jour"
     lambda: |-
-      return id(eau_conso_jour).state * 10.01;
+      return id(eau_conso_jour).state / 1000;
     device_class: water
     unit_of_measurement: "m³"
-    accuracy_decimals: 3 
+    accuracy_decimals: 2
     id: eau_m3_jour
     state_class: total_increasing
     
 ######################### 
-# Total gaz power today
+# Total eau m3 yesterday
   - platform: template
     name: "Eau m3 Veille"
     state_class: total_increasing
@@ -168,7 +168,7 @@ switch:
 text_sensor:
   # Uptime human readable
   - platform: template
-    name: ${name} - Uptime
+    name: "${name} - Uptime"
     update_interval: 60s
     icon: mdi:clock-start
     lambda: |-
@@ -190,12 +190,12 @@ text_sensor:
       }
   # Expose ESPHome version as sensor.
   - platform: version
-    name: ${name} - Version
+    name: "${name} - Version"
   # Expose WiFi information as sensors.
   - platform: wifi_info
     ip_address:
-      name: ${name} - IP
+      name: "${name} - IP"
     bssid:
-      name: ${name} - BSSID
+      name: "${name} - BSSID"
       
 ################################################################################################      
