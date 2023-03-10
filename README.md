@@ -9,7 +9,7 @@
 </p>
 <p align="center">
     Update : 2023/02/27<br />
-    Article Tech2Tech (in French) : Bientôt en ligne 😉
+    Article Tech2Tech (in French) : <a href="https://ppmc.me/u9wf78">Tout sur l’installation domotique de ma maison</a>
 </p>
 <p align="center">
     <a href="https://www.home-assistant.io/"><img src="https://img.shields.io/badge/Home_Assistant-%2341BDF5.svg?style=for-the-badge&logo=home-assistant&logoColor=white"> </a>
