@@ -32,14 +32,15 @@ for (var i = 1; i <= numCombinations; i++) {
   }
 
   // Générer le nom du fichier
-  var fileName = "f_";
-  for (var k = 0; k < combination.length; k++) {
+  var fileName = "";
+  for (var k = combination.length - 1; k >= 0; k--) {
     fileName += combination[k].name.replace(/\s+/g, "_");
-    if (k < combination.length - 1) {
+    if (k > 0) {
       fileName += "-";
     }
   }
   fileName += ".png";
+
 
   // Exporter l'image de la combinaison
   var exportOptions = new ExportOptionsSaveForWeb();

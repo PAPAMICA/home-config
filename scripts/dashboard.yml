@@ -1,0 +1,3203 @@
+type: picture-elements
+image: /local/images/salon/L1.png
+elements:
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L3.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L4.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L4.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L4.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L4.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L4-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L4-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L4-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L4.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L4.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L4-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L4-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L4-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L4.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L4-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L4-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L4-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L4-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L4-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L4-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L4-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L4-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L4-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L4.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L4-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L4-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L4-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L4-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L4-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L4-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L4-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L4-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L4-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L4-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L4-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L4-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L4-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L4-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L4-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L4-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L4-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L4-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L4-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L4-L5.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L4-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L4-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L4-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L4-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L4-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L4-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L4-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L4-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L4-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L4-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L4-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L4-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L4-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L3-L4-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'off'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L4-L5-L6.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'off'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L4-L5-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'off'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L4-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'off'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'off'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L4-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'off'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L3-L4-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'off'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L2-L3-L4-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: conditional
+    condition: and
+    conditions:
+      - entity: light.hue_play_gradient_lightstrip_1
+        state: 'on'
+      - entity: light.salon_led_canape_2
+        state: 'on'
+      - entity: light.hue_ambiance_lamp_1
+        state: 'on'
+      - entity: light.salon_led_escaliers
+        state: 'on'
+      - entity: light.salon_lumiere_lustre
+        state: 'on'
+      - entity: light.salle_lumiere_lustre
+        state: 'on'
+      - entity: light.cuisine_lumiere_lustre
+        state: 'on'
+    elements:
+      - type: image
+        image: /local/images/salon/L1-L2-L3-L4-L5-L6-L7.png
+        style:
+          top: 50%
+          left: 50%
+          width: 100%
+  - type: state-icon
+    icon: mdi:ceiling-light-outline
+    icon_color: yellow
+    entity: light.cuisine_lumiere_lustre
+    style:
+      left: 70%
+      top: 30%
+    tap_action:
+      action: toggle
+  - type: state-icon
+    icon: mdi:ceiling-light-multiple-outline
+    icon_color: yellow
+    entity: light.salle_lumiere_lustre
+    style:
+      left: 53%
+      top: 50%
+    tap_action:
+      action: toggle
+  - type: state-icon
+    icon: mdi:globe-light-outline
+    icon_color: yellow
+    entity: light.salon_lumiere_lustre
+    style:
+      left: 33%
+      top: 20%
+    tap_action:
+      action: toggle
+  - type: state-icon
+    icon: mdi:led-strip-variant
+    icon_color: yellow
+    entity: light.hue_play_gradient_lightstrip_1
+    style:
+      left: 28%
+      top: 52%
+    tap_action:
+      action: toggle
+  - type: state-icon
+    icon: mdi:floor-lamp-outline
+    icon_color: yellow
+    entity: light.hue_ambiance_lamp_1
+    style:
+      left: 20%
+      top: 63%
+    tap_action:
+      action: toggle
+  - type: state-icon
+    icon: mdi:led-strip-variant
+    icon_color: yellow
+    entity: light.salon_led_canape_2
+    style:
+      left: 30%
+      top: 73%
+    tap_action:
+      action: toggle
+  - type: state-icon
+    icon: mdi:led-strip-variant
+    icon_color: yellow
+    entity: light.salon_led_escaliers
+    style:
+      left: 43%
+      top: 33%
+    tap_action:
+      action: toggle
+  - type: custom:mushroom-climate-card
+    card_mod:
+      style: |
+        ha-card {
+          background: none
+         } 
+    name: Climatisation
+    fill_container: false
+    layout: vertical
+    show_temperature_control: true
+    collapsible_controls: true
+    hvac_modes:
+      - cool
+    icon_color: blue
+    entity: climate.salon_climatisation
+    style:
+      left: 67%
+      top: 9%
+      transform: >-
+        rotateX(-3deg) rotateY(-18.1deg) rotateZ(30deg) skewX(26.5deg)
+        skewY(0deg)
+    tap_action:
+      action: toggle
+  - type: custom:mushroom-cover-card
+    card_mod:
+      style: |
+        ha-card {
+          #background: none
+         } 
+    name: Salon
+    fill_container: false
+    layout: horizontal
+    icon_color: blue
+    entity: cover.salon_volets
+    style:
+      left: 94%
+      top: 20%
+    tap_action:
+      action: toggle
+  - type: custom:mushroom-cover-card
+    card_mod:
+      style: |
+        ha-card {
+          #background: none
+         } 
+    name: Salle
+    fill_container: false
+    layout: horizontal
+    icon_color: blue
+    entity: cover.salle_volets
+    style:
+      left: 94%
+      top: 30%
+    tap_action:
+      action: toggle
+  - type: custom:mushroom-cover-card
+    card_mod:
+      style: |
+        ha-card {
+          #background: none
+         } 
+    name: Cuisine
+    fill_container: true
+    layout: horizontal
+    icon_color: blue
+    entity: cover.cuisine_volets
+    style:
+      left: 94%
+      top: 40%
+    tap_action:
+      action: toggle
+  - type: custom:mushroom-cover-card
+    card_mod:
+      style: |
+        ha-card {
+          #background: none
+         } 
+    name: 1er
+    fill_container: false
+    layout: horizontal
+    icon_color: blue
+    entity: cover.volets_du_premier_2
+    style:
+      left: 94%
+      top: 50%
+    tap_action:
+      action: toggle
+view_layout:
+  position: main
