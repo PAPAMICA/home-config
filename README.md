@@ -33,3 +33,13 @@
 
 ## Cameras Dashboard
 ![Cameras Dashboard](pictures/home-assistant_dashboard_cameras.png)
+
+
+# Presence Detector
+
+Credit to "Les frères Poulain" in this video : https://www.youtube.com/watch?v=DjN9L8Cagnw
+
+Hardware :
+ - Board : lolin_s2_mini → https://amzn.to/47JHeDX / https://fr.aliexpress.com/item/1005004971974530.html
+ - Presence sensor : LD2410C → https://amzn.to/412mtAD / https://fr.aliexpress.com/item/1005005087204432.html
+ - Light sensor : BH1750 → https://amzn.to/3RhkPrM
