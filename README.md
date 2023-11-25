@@ -24,15 +24,23 @@
 ## Main Dashboard
 ![Main Dashboard](pictures/home-assistant_dashboard_main.png)
 
+## Interactive Dashboard
+![Interactive Dashboard](pictures/home-assistant_dashboard_interactive.png)
+
 ## Energy Dashboard
 ![Energy Dashboard](pictures/home-assistant_dashboard_energy.png)
 ![Energy Dashboard 2](pictures/home-assistant_dashboard_energy_2.png)
+![Energy Dashboard Grafana](pictures/grafana_dashboard_energy.png)
+
 
 ## Network Dashboard
 ![Network Dashboard](pictures/home-assistant_dashboard_network.png)
 
-## Cameras Dashboard
-![Cameras Dashboard](pictures/home-assistant_dashboard_cameras.png)
+## Tablet Dashboard
+![Cameras Dashboard](pictures/home-assistant_dashboard_tablette.png)
+
+## Battery Dashboard
+![Battery Dashboard](pictures/home-assistant_dashboard_battery.png)
 
 
 # Presence Detector
