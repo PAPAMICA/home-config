@@ -1,7 +1,7 @@
 # Variables
 substitutions:
-  name: detect-marion
-  friendly_name: Marion - Détecteur de présence
+  name: detect-escaliers
+  friendly_name: Escaliers - Détecteur de présence
 
 # Configuration principale
 esphome:
@@ -58,6 +58,12 @@ uart:
 ld2410:
   - uart_id: uart_2
 
+i2c:
+  sda: 9
+  scl: 3
+  scan: false
+  id: bus_a
+
   #################################################################################################################
 
 
@@ -90,6 +96,12 @@ sensor:
       name: Still Energy
     detection_distance: #distance de détection
       name: Detection Distance
+      
+  - platform: bh1750
+    name: "Illuminance"
+    address: 0x23
+    i2c_id: bus_a
+    update_interval: 1s
 
   # Wi-Fi signal
   - platform: wifi_signal
